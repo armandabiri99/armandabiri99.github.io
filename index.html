@@ -1,151 +1,383 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Arman Dabiri — AWS Solutions Architect</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css"/>
-  <meta name="description" content="AWS Solutions Architect & DevOps | Terraform | Kubernetes | Cloud Migrations">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arman Dabiri — AWS Solutions Architect & DevOps</title>
+
+  <!-- Google Font (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Arman Dabiri — AWS Solutions Architect & Cloud/DevOps Engineer | Terraform • Kubernetes • AWS • Cloud Migrations. Portfolio and Projects." />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1720;
+      --muted:#9aa6b2;
+      --accent:#36c3ff;
+      --glass: rgba(255,255,255,0.03);
+      --card: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      --radius:14px;
+      --maxw:1100px;
+      --glass-border: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(54,195,255,0.03), transparent), var(--bg);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:32px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+    }
+    header{ display:flex; gap:24px; align-items:center; margin-bottom:28px; }
+    .avatar{
+      width:120px; height:120px; border-radius:16px; overflow:hidden;
+      border:1px solid var(--glass-border); box-shadow: 0 6px 20px rgba(2,6,12,0.6);
+      flex:0 0 120px; background:var(--glass);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .title{ display:flex; flex-direction:column; gap:6px; }
+    .name{ font-size:20px; font-weight:700; letter-spacing:0.2px; }
+    .headline{ color:var(--muted); font-weight:500; font-size:13px; }
+    .small-muted{ color:var(--muted); font-size:13px }
+    .top-actions{ margin-left:auto; display:flex; gap:10px; align-items:center; }
+    .btn{
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border:1px solid var(--glass-border);
+      padding:8px 12px; border-radius:10px; color:inherit; font-weight:600; cursor:pointer;
+      text-decoration:none; display:inline-flex; gap:8px; align-items:center;
+    }
+    .btn.ghost{background:transparent}
+    main{ display:grid; grid-template-columns: 1fr 360px; gap:24px; }
+    .panel{ background:var(--card); border:1px solid var(--glass-border); border-radius:var(--radius); padding:20px; box-shadow: 0 6px 20px rgba(2,6,12,0.6); }
+    .about p{ color:var(--muted); margin:10px 0 0 0; }
+    .section-title{ display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
+    .section-title h3{ margin:0; font-size:15px; letter-spacing:0.2px; }
+    .projects-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; }
+    .project-card{ background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03);
+                   padding:12px; border-radius:12px; min-height:120px; display:flex; flex-direction:column; gap:8px; justify-content:space-between; }
+    .project-title{ font-weight:700; font-size:14px } .project-desc{ color:var(--muted); font-size:13px }
+    .tags{ display:flex; gap:6px; flex-wrap:wrap } .tag{ background:rgba(255,255,255,0.02); padding:5px 8px; border-radius:8px; font-size:12px; color:var(--muted) }
+    .side-section{ display:flex; flex-direction:column; gap:16px } .skills{ display:flex; flex-wrap:wrap; gap:8px }
+    .skill{ padding:8px 10px; border-radius:10px; background:rgba(255,255,255,0.02); font-size:13px; color:var(--muted) }
+    .cert-list{ display:flex; flex-direction:column; gap:8px } .cert-item{ display:flex; align-items:center; gap:10px; font-size:13px; color:var(--muted) }
+    footer{ margin-top:20px; display:flex; gap:12px; align-items:center; justify-content:flex-end; color:var(--muted); font-size:13px; }
+    .socials{ display:flex; gap:8px; align-items:center } .socials a{ color:var(--muted); text-decoration:none; font-weight:600; font-size:13px }
+    .modal{ position:fixed; left:0;top:0;right:0;bottom:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.6); z-index:60; padding:24px; }
+    .modal-card{ width:100%; max-width:720px; background:var(--panel); border-radius:12px; padding:18px; border:1px solid var(--glass-border); }
+    .form-row{display:flex;gap:10px;margin-bottom:10px} .form-row input,.form-row textarea, .form-row select{ width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.03); background:transparent; color:inherit; }
+    .muted-note{color:var(--muted);font-size:13px}
+    @media (max-width:980px){ main{grid-template-columns:1fr} .avatar{width:96px;height:96px} .top-actions{margin-left:0} }
+  </style>
 </head>
 <body>
-  <header class="wrap hero">
-    <div class="chip">Portfolio</div>
-    <h1>Arman Dabiri</h1>
-    <p class="subtitle">AWS Solutions Architect & Cloud/DevOps Engineer</p>
-    <p class="meta">
-      Los Angeles, CA ·
-      <a href="https://www.linkedin.com/in/arman-dabiri-266178189" target="_blank" rel="noopener">LinkedIn</a> ·
-      <a href="https://github.com/armandabiri99" target="_blank" rel="noopener">GitHub</a> ·
-      <a href="mailto:arman_dabiri@hotmail.com">Email</a>
-    </p>
-    <p class="tagline">
-      Designing secure, cost‑efficient AWS architectures and automating delivery with Terraform and Kubernetes.
-    </p>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#certs">Certifications</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="about" class="wrap section">
-      <h2>About</h2>
-      <p>
-        Sr. Systems/Cloud Engineer with 5+ years designing, securing, and managing IT in multi‑location healthcare.
-        Specialized in AWS architecture, VMware, and Windows Server ecosystems—focused on automation with Terraform,
-        Ansible, and CloudFormation. Experienced leading OpenDental/Dentrix deployments, DR strategy, and uptime gains.
-      </p>
-    </section>
-
-    <section id="experience" class="wrap section">
-      <h2>Experience</h2>
-
-      <article class="card">
-        <div class="card-head">
-          <h3>IT Director & Cloud Engineer · Network Experts, Inc</h3>
-          <span>May 2024 – Present · Beverly Hills, CA</span>
-        </div>
-        <ul>
-          <li>Architected secure, scalable AWS infrastructures with an automation‑first approach.</li>
-          <li>Implemented IaC via Terraform and CloudFormation to cut provisioning time.</li>
-          <li>Drove cloud/on‑prem migrations with high availability and lifecycle management.</li>
-          <li>Built cloud security frameworks: strong IAM, segmentation, and Zero Trust patterns.</li>
-          <li>Established CI/CD practices with DevOps teams for resilient delivery.</li>
-          <li>Delivered HIPAA‑aligned solutions to 300+ dental offices with minimal disruption.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <div class="card-head">
-          <h3>Systems Engineer · Network Experts, Inc</h3>
-          <span>Sep 2023 – May 2024 · Beverly Hills, CA</span>
-        </div>
-        <ul>
-          <li>Maintained system integrity across dental practices; resolved network/server/app issues.</li>
-          <li>Managed Microsoft 365 and Active Directory to strengthen identity and security.</li>
-          <li>Administered hardened Windows Server environments and tuned performance.</li>
-          <li>Improved endpoint protection and threat detection.</li>
-          <li>Supported practice management and imaging platforms across locations.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <div class="card-head">
-          <h3>System Administrator · Medis Holding</h3>
-          <span>Jun 2020 – Jul 2023 · Shiraz, Iran</span>
-        </div>
-        <ul>
-          <li>Managed 60+ physical servers with proactive lifecycle and redundancy plans.</li>
-          <li>Operated VMware vCenter/vSAN clusters for scalable, resilient virtualization.</li>
-          <li>Hardened Cisco/MikroTik networks; enabled secure remote access.</li>
-          <li>Implemented DR/backup strategies, cutting RTO by ~40%.</li>
-          <li>Monitored Apache/Windows stacks with patching and PRTG visibility.</li>
-          <li>Reduced downtime ~25% via capacity planning and optimization.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section id="projects" class="wrap section">
-      <h2>Featured Project</h2>
-      <article class="card">
-        <div class="card-head">
-          <h3>Amazon WorkSpaces One‑Shot Image Upgrade Automation</h3>
-          <span>IaC · Lambda · Step Functions · S3 · KMS</span>
-        </div>
-        <p>
-          CloudFormation‑driven pipeline to update bundles to new images, detect next snapshots,
-          notify users, perform controlled rebuilds, and publish CSV reports to S3 with KMS—then
-          self‑cleanup on completion.
-        </p>
-        <p><a href="https://github.com/armandabiri99" target="_blank" rel="noopener">View on GitHub</a></p>
-      </article>
-    </section>
-
-    <section id="skills" class="wrap section">
-      <h2>Skills</h2>
-      <div class="pillbox">
-        <span>AWS</span><span>Cloud Architecture</span><span>Terraform</span><span>Kubernetes</span>
-        <span>CloudFormation</span><span>Linux</span><span>VMware</span><span>Windows Server</span>
-        <span>Networking & VPN</span><span>Zero Trust</span><span>CI/CD</span><span>Security & IAM</span>
+  <div class="wrap">
+    <header>
+      <div class="avatar" aria-hidden="true">
+        <img src="profile.jpg" alt="Arman Dabiri — profile photo">
       </div>
-    </section>
 
-    <section id="certs" class="wrap section">
-      <h2>Certifications</h2>
-      <ul class="tight">
-        <li>AWS Certified Solutions Architect – Associate</li>
-        <li>AWS Cloud Practitioner</li>
-        <li>Fortinet ZTNA / SASE / Public Cloud Security (course certificates)</li>
-      </ul>
-    </section>
+      <div class="title">
+        <div class="name">Arman Dabiri</div>
+        <div class="headline">AWS Solutions Architect — DevOps · Kubernetes · Terraform · AWS</div>
+        <div class="small-muted">AWS SAA • AWS CCP • SC‑300</div>
+      </div>
 
-    <section id="education" class="wrap section">
-      <h2>Education</h2>
-      <ul class="tight">
-        <li><strong>Westcliff University</strong> — M.S. Information Technology (Cloud Computing), 2023–2025</li>
-        <li><strong>Shiraz University of Technology</strong> — B.S. Electrical & Electronics Engineering, 2017–2021</li>
-      </ul>
-    </section>
+      <div class="top-actions">
+        <a class="btn" href="https://github.com/armandabiri99" target="_blank" rel="noopener noreferrer">
+          <!-- GitHub SVG -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 .5C5.73.5.9 5.33.9 11.6c0 4.6 2.99 8.52 7.14 9.9.52.1.71-.23.71-.5 0-.25-.01-.91-.01-1.79-2.9.64-3.51-1.4-3.51-1.4-.48-1.2-1.18-1.52-1.18-1.52-.97-.66.07-.65.07-.65 1.07.08 1.64 1.1 1.64 1.1.95 1.64 2.5 1.16 3.11.88.1-.7.37-1.16.68-1.43-2.32-.27-4.76-1.16-4.76-5.16 0-1.13.39-2.05 1.05-2.78-.11-.27-.46-1.39.1-2.9 0 0 .86-.28 2.82 1.05a9.6 9.6 0 0 1 2.57-.35c.87.01 1.75.12 2.57.35 1.95-1.33 2.81-1.05 2.81-1.05.56 1.51.21 2.63.1 2.9.65.73 1.05 1.65 1.05 2.78 0 4.01-2.45 4.88-4.78 5.14.38.33.72.98.72 1.98 0 1.43-.01 2.58-.01 2.93 0 .27.18.61.72.5 4.15-1.38 7.13-5.3 7.13-9.9C23.1 5.33 18.27.5 12 .5z" fill="currentColor"/></svg>
+          GitHub
+        </a>
 
-    <section id="contact" class="wrap section">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:arman_dabiri@hotmail.com">arman_dabiri@hotmail.com</a></p>
-      <p>Location: Los Angeles, California</p>
-    </section>
-  </main>
+        <a class="btn ghost" href="Arman-Dabiri-Resume.pdf" download>
+          Resume
+        </a>
+      </div>
+    </header>
 
-  <footer class="wrap footer">
-    <small>© <span id="y"></span> Arman Dabiri · Hosted on GitHub Pages</small>
-  </footer>
+    <main>
+      <!-- Left column -->
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <section class="panel about" aria-labelledby="about">
+          <div class="section-title">
+            <h3 id="about">About</h3>
+            <div class="small-muted">Single-page — technical portfolio</div>
+          </div>
 
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+          <p>
+            Cloud & DevOps engineer designing secure, cost‑efficient AWS architectures and automating delivery with Terraform, Kubernetes, and CloudFormation. MSP background supporting multi‑location healthcare; I build resilient platforms, IaC pipelines, and disaster‑recovery strategies.
+          </p>
+
+          <p class="muted-note" style="margin-top:10px">
+            Los Angeles, California • Open to Cloud/DevOps roles • Hosting: armandabiri99.github.io
+          </p>
+        </section>
+
+        <section class="panel" aria-labelledby="projects">
+          <div class="section-title">
+            <h3 id="projects">Projects</h3>
+            <div class="small-muted">Add projects as you complete them</div>
+          </div>
+
+          <div class="projects-grid" id="projectsGrid">
+            <div class="project-card" id="placeholderCard">
+              <div>
+                <div class="project-title">Amazon WorkSpaces One‑Shot Image Upgrade</div>
+                <div class="project-desc">CloudFormation + Step Functions + Lambda pipeline: update bundle image, detect next snapshot, notify users, rebuild fleet, and export CSV to S3 (KMS).</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div class="tags">
+                  <a class="tag" href="https://github.com/armandabiri99" target="_blank" rel="noopener">GitHub</a>
+                  <span class="tag">AWS</span><span class="tag">Lambda</span><span class="tag">IaC</span>
+                </div>
+                <div style="font-size:12px;color:var(--muted)">2025</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <button class="btn" id="addProjectBtn">Add Project</button>
+            <a class="btn ghost" href="https://github.com/armandabiri99" target="_blank" rel="noopener">View GitHub</a>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="experience">
+          <div class="section-title">
+            <h3 id="experience">Summary & Experience</h3>
+            <div class="small-muted">Highlights</div>
+          </div>
+
+          <p class="small-muted">
+            IT Director & Cloud Engineer at an MSP; previously Systems Administrator. Hands‑on with EKS, Terraform, VMware, SonicWall/FTD, Microsoft 365/AD. Focused on automation, security, DR, and performance.
+          </p>
+
+          <ul style="margin-top:12px;color:var(--muted);line-height:1.6;padding-left:18px">
+            <li>Architected AWS VPC, IAM, ECR/ECS/EKS, S3, KMS, CloudWatch; implemented IaC (Terraform/CFN).</li>
+            <li>Built CI/CD for infra and apps; shift‑left security and least‑privilege IAM.</li>
+            <li>Migrated multi‑location dental practices (OpenDental/Dentrix) with HA and backups.</li>
+            <li>Ran VMware clusters, AD DS, RDS, and on‑prem networking with VPN/Zero Trust patterns.</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Right column -->
+      <aside class="side-section">
+        <div class="panel">
+          <div class="section-title">
+            <h3>Skills</h3>
+            <div class="small-muted">Core technologies</div>
+          </div>
+          <div class="skills" id="skillsList">
+            <span class="skill">AWS (EC2, S3, VPC, RDS, IAM)</span>
+            <span class="skill">Kubernetes & EKS</span>
+            <span class="skill">Docker</span>
+            <span class="skill">Terraform</span>
+            <span class="skill">CloudFormation</span>
+            <span class="skill">Linux & Windows</span>
+            <span class="skill">VMware vCenter/vSAN</span>
+            <span class="skill">Networking & VPN</span>
+            <span class="skill">CI/CD</span>
+            <span class="skill">Security & KMS</span>
+            <span class="skill">Bash · Python · PowerShell</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-title">
+            <h3>Certifications</h3>
+            <div class="small-muted">Professional</div>
+          </div>
+          <div class="cert-list">
+            <div class="cert-item">✅ AWS Certified Solutions Architect – Associate</div>
+            <div class="cert-item">✅ AWS Certified Cloud Practitioner</div>
+            <div class="cert-item">✅ Microsoft SC‑300 (Identity & Access Admin)</div>
+            <div class="cert-item">✅ LPIC‑1 / CompTIA Network+ (coursework)</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-title">
+            <h3>Contact</h3>
+            <div class="small-muted">Let's connect</div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div class="small-muted">Email</div>
+            <a class="btn" href="mailto:arman_dabiri@hotmail.com">arman_dabiri@hotmail.com</a>
+
+            <div class="small-muted" style="margin-top:6px">Location</div>
+            <div class="muted-note">Los Angeles, CA</div>
+
+            <div class="small-muted" style="margin-top:6px">LinkedIn</div>
+            <a class="socials btn ghost" href="https://www.linkedin.com/in/arman-dabiri-266178189" target="_blank" rel="noopener noreferrer">
+              View LinkedIn
+            </a>
+
+            <div style="margin-top:10px;display:flex;gap:8px">
+              <a class="btn" href="Arman-Dabiri-Resume.pdf" download>Download Resume</a>
+              <a class="btn ghost" href="mailto:arman_dabiri@hotmail.com">Contact</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="small-muted">© <span id="year"></span> Arman Dabiri — Hosted on GitHub Pages</div>
+    </footer>
+  </div>
+
+  <!-- Add Project Modal -->
+  <div id="projectModal" class="modal" style="display:none" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card" role="document">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0">Add Project</h3>
+        <button class="btn ghost" id="closeModal">Close</button>
+      </div>
+
+      <div class="muted-note" style="margin-bottom:10px">Fill fields and click "Add" — the project card will be created locally in the page. To make it permanent, paste the generated HTML into this page or add to a projects JSON file in your repo if you prefer.</div>
+
+      <div class="form-row">
+        <input id="projTitle" placeholder="Project Title (e.g., EKS Auto-scaling Demo)" />
+      </div>
+      <div class="form-row">
+        <input id="projRepo" placeholder="GitHub Repo URL (https://github.com/username/repo)" />
+      </div>
+      <div class="form-row">
+        <input id="projTags" placeholder="Tags (comma separated — e.g., Kubernetes, Terraform, CI/CD)" />
+      </div>
+      <div class="form-row">
+        <textarea id="projDesc" placeholder="Short description (one sentence)" rows="3"></textarea>
+      </div>
+
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:10px">
+        <button class="btn ghost" id="cancelAdd">Cancel</button>
+        <button class="btn" id="confirmAdd">Add Project</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // small interactive behaviors
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    const addBtn = document.getElementById('addProjectBtn');
+    const modal = document.getElementById('projectModal');
+    const closeBtn = document.getElementById('closeModal');
+    const cancelAdd = document.getElementById('cancelAdd');
+    const confirmAdd = document.getElementById('confirmAdd');
+    const projectsGrid = document.getElementById('projectsGrid');
+    const placeholderCard = document.getElementById('placeholderCard');
+
+    function openModal() {
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+      document.getElementById('projTitle').focus();
+    }
+    function closeModalFunc() {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+      // clear
+      ['projTitle','projRepo','projTags','projDesc'].forEach(id => document.getElementById(id).value = '');
+    }
+
+    addBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModalFunc);
+    cancelAdd.addEventListener('click', closeModalFunc);
+
+    confirmAdd.addEventListener('click', () => {
+      const title = document.getElementById('projTitle').value.trim();
+      const repo = document.getElementById('projRepo').value.trim();
+      const tags = document.getElementById('projTags').value.trim();
+      const desc = document.getElementById('projDesc').value.trim();
+
+      if (!title) {
+        alert('Please add a project title.');
+        return;
+      }
+
+      // remove placeholder if it exists
+      if (placeholderCard) placeholderCard.style.display = 'none';
+
+      // create card
+      const card = document.createElement('div');
+      card.className = 'project-card';
+
+      const top = document.createElement('div');
+      const titleEl = document.createElement('div');
+      titleEl.className = 'project-title';
+      if (repo) {
+        const a = document.createElement('a');
+        a.href = repo;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = title;
+        a.style.color = 'inherit';
+        a.style.textDecoration = 'none';
+        titleEl.appendChild(a);
+      } else {
+        titleEl.textContent = title;
+      }
+
+      const descEl = document.createElement('div');
+      descEl.className = 'project-desc';
+      descEl.textContent = desc || '—';
+
+      top.appendChild(titleEl);
+      top.appendChild(descEl);
+
+      const bottom = document.createElement('div');
+      bottom.style.display = 'flex';
+      bottom.style.justifyContent = 'space-between';
+      bottom.style.alignItems = 'center';
+
+      const tagsEl = document.createElement('div');
+      tagsEl.className = 'tags';
+      if (tags) {
+        tags.split(',').map(t => t.trim()).filter(Boolean).forEach(t => {
+          const s = document.createElement('span');
+          s.className = 'tag';
+          s.textContent = t;
+          tagsEl.appendChild(s);
+        });
+      } else {
+        const s = document.createElement('span');
+        s.className = 'tag';
+        s.textContent = 'Uncategorized';
+        tagsEl.appendChild(s);
+      }
+
+      const meta = document.createElement('div');
+      meta.style.fontSize='12px';
+      meta.style.color='var(--muted)';
+      meta.textContent = new Date().getFullYear();
+
+      bottom.appendChild(tagsEl);
+      bottom.appendChild(meta);
+
+      card.appendChild(top);
+      card.appendChild(bottom);
+
+      projectsGrid.appendChild(card);
+      closeModalFunc();
+    });
+
+    // keyboard escape to close modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'flex') closeModalFunc();
+    });
+  </script>
 </body>
 </html>
