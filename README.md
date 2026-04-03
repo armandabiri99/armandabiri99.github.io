@@ -29,8 +29,8 @@ I enjoy helping organizations transition from traditional infrastructure to clou
 - **Amazon Web Services (AWS)**
 - **Cloud Infrastructure Architecture**
 - **VPN Configuration & Network Security**
-- VMware vSphere & vSAN
-- Microsoft Windows Server & Active Directory
+- **VMware vSphere & vSAN**
+- **Microsoft Windows Server & Active Directory**
 - Terraform, AWS CloudFormation, Ansible
 - Disaster Recovery & High Availability
 - Cisco & Mikrotik Networking
@@ -42,6 +42,7 @@ I enjoy helping organizations transition from traditional infrastructure to clou
 
 ## Certifications
 
+- HashiCorp Certified: Terraform Associate (004)
 - AWS Certified Solutions Architect – Associate
 - AWS Cloud Practitioner
 - The Evolution of Access to Applications with Fortinet ZTNA
