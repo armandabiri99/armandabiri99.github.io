@@ -96,6 +96,19 @@
     Array.prototype.forEach.call(revealables, function (el) { reveal.observe(el); });
   }
 
+  /* ---------- Expandable project detail ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.more-toggle'), function (btn) {
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    var label = btn.querySelector('.more-label');
+    if (!panel) return;
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      panel.classList.toggle('open', !open);
+      if (label) label.textContent = open ? 'More' : 'Less';
+    });
+  });
+
   /* ---------- Project card cursor glow ---------- */
   if (!reduceMotion && window.matchMedia('(hover: hover)').matches) {
     Array.prototype.forEach.call(document.querySelectorAll('.proj'), function (card) {

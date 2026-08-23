@@ -24,6 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<noscript><style>.proj-more{grid-template-rows:1fr !important}.more-toggle{display:none !important}</style></noscript>
 
 <script>
   // Applied before paint to avoid a theme flash.
@@ -313,7 +314,15 @@
           </div>
           <div class="proj-body">
             <p>Designed and deployed a centralized OpenDental environment supporting five dental locations and remote users. Migrated and consolidated site infrastructure while establishing secure site-to-site VPN connectivity across SonicWall and UniFi networks.</p>
-            <p>Implemented Windows Server 2022, Hyper-V, Active Directory, OpenDental Middle Tier through IIS/HTTPS, MariaDB data synchronization, secure SFTP image access, and RDS connectivity for remote call-center staff. Coordinated site cutovers, workstation deployment, database troubleshooting, replication recovery, and network failover to improve centralized management and reliability across the organization.</p>
+            <div class="proj-more" id="opendental-detail">
+              <div>
+                <p>Implemented Windows Server 2022, Hyper-V, Active Directory, OpenDental Middle Tier through IIS/HTTPS, MariaDB data synchronization, secure SFTP image access, and RDS connectivity for remote call-center staff. Coordinated site cutovers, workstation deployment, database troubleshooting, replication recovery, and network failover to improve centralized management and reliability across the organization.</p>
+              </div>
+            </div>
+            <button class="more-toggle" type="button" aria-expanded="false" aria-controls="opendental-detail">
+              <span class="more-label">More</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
           </div>
           <div class="tags">
             <span class="tag">OpenDental</span><span class="tag">Windows Server</span><span class="tag">Hyper-V</span><span class="tag">MariaDB</span><span class="tag">IIS</span><span class="tag">Active Directory</span><span class="tag">RDS</span><span class="tag">VPN</span><span class="tag">SFTP</span>
