@@ -29,12 +29,13 @@ I enjoy helping organizations transition from traditional infrastructure to clou
 
 ## Skills
 
-**Cloud & IaC** — AWS (EC2, VPC, IAM, S3, RDS, CloudWatch, WorkSpaces), Microsoft Azure, Terraform, CloudFormation, Ansible
+**Cloud & IaC** — AWS (EC2, VPC, IAM, S3, RDS, CloudWatch, WorkSpaces), Microsoft Azure, Terraform, CloudFormation
 **Identity & Access** — Active Directory, Entra ID, Okta, Duo, Google Workspace, Rippling SSO, MFA/SSO, Group Policy
 **Endpoint & Security** — Kandji (MDM), Apple Business Manager, Atera RMM, Huntress EDR, FileVault, CIS macOS hardening, Fortinet ZTNA/SASE, HIPAA
 **Networking** — Ubiquiti UniFi (gateways, switching, Wi-Fi, Protect, Access), SonicWall, Cisco Firepower, MikroTik, site-to-site VPN, DNS/DHCP, VLAN design
 **Systems & Virtualization** — Windows Server, Linux (RHEL/Ubuntu/CentOS), macOS, VMware vCenter & vSAN, Microsoft 365, Veeam, Axcient, Cohesity, backup & DR
-**Automation & Operations** — PowerShell, Bash, Power Automate, Zapier, Linear, PRTG, CI/CD, Kubernetes fundamentals
+**Automation & Operations** — PowerShell, Bash, Power Automate, Zapier, Linear, PRTG
+**Familiar / learning** — Ansible, CI/CD pipelines, DevOps practices, Kubernetes fundamentals (CKA prep)
 
 ---
 
@@ -115,7 +116,7 @@ I enjoy helping organizations transition from traditional infrastructure to clou
 - **[Secure 3-Tier VPC with ALB, ASG & RDS](https://github.com/armandabiri99/AWS_Multi_Tier_Webapp_Infra)** — Production-style Terraform baseline: multi-AZ VPC, ALB + Auto Scaling, RDS MySQL, SSM parameters, hardened security groups
 - **OpenDental Multi-Site Hybrid Infrastructure Deployment** — Centralized OpenDental environment across five dental locations: Windows Server 2022, Hyper-V, Active Directory, IIS/HTTPS Middle Tier, MariaDB replication, SFTP image access, and RDS for remote call-center staff, over site-to-site VPN across SonicWall and UniFi
 - **M365 Tenant Audit & Automation Recovery** — Audited 16 Power Automate flows and 12 SharePoint sites, authored an operations runbook, and restored credential-rotation-broken automations with zero data loss
-- **[MSP Pricing Calculator](https://github.com/armandabiri99/MSP-Pricing-Calculator)** — Native Swift utility for modeling managed-service pricing, margins, and contract scenarios
+- **[MSP Pricing Calculator](https://github.com/armandabiri99/MSP-Pricing-Calculator)** — SwiftUI iOS quote builder for MSPs: JSON-driven pricing editable in-app, branded PDF quote export, MVVM structure
 
 ---
 

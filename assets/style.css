@@ -331,6 +331,7 @@ ul{margin:0;padding:0;list-style:none}
   background:var(--accent-soft);color:var(--accent);
 }
 .skill-card h3 .ico svg{width:15px;height:15px}
+.skill-note{color:var(--muted);font-size:12.8px;margin:-6px 0 13px;line-height:1.5}
 .chips{display:flex;flex-wrap:wrap;gap:7px}
 .chip{
   font-size:12.5px;padding:5px 11px;border-radius:var(--r-pill);color:var(--text-dim);
