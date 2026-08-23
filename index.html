@@ -1,753 +1,581 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Arman Dabiri — Platform/Infrastructure Engineer</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arman Dabiri — Lead IT &amp; Infrastructure Engineer</title>
 
-  <!-- Google Font (Inter) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<meta name="description" content="Arman Dabiri — Lead IT &amp; Infrastructure Engineer in Los Angeles. AWS and hybrid cloud, Terraform, identity (Entra ID, Okta, Google Workspace), endpoint security and multi-site network operations.">
+<meta name="author" content="Arman Dabiri">
+<link rel="canonical" href="https://armandabiri99.github.io/">
+<meta name="theme-color" content="#07090d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)">
 
-  <meta name="description" content="Arman Dabiri — Platform/Infrastructure Engineer | AWS Solutions Architect (Associate). Portfolio and Projects." />
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Arman Dabiri — Lead IT &amp; Infrastructure Engineer">
+<meta property="og:description" content="AWS and hybrid infrastructure, identity, endpoint security and multi-site network operations. Los Angeles, CA.">
+<meta property="og:url" content="https://armandabiri99.github.io/">
+<meta property="og:image" content="https://armandabiri99.github.io/profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
 
-  <style>
-    :root{
-      --bg:#0a0e13;
-      --bg-secondary:#0f1419;
-      --panel:#151b23;
-      --panel-hover:#1a2129;
-      --text:#e8eef5;
-      --muted:#8b99a8;
-      --accent:#3b9eff;
-      --accent-light:#5db2ff;
-      --accent-glow:rgba(59,158,255,0.15);
-      --success:#34d399;
-      --warning:#fbbf24;
-      --glass: rgba(255,255,255,0.03);
-      --card: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      --radius:14px;
-      --maxw:1100px;
-      --glass-border: rgba(255,255,255,0.06);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;padding:0}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(135deg, #0a0e13 0%, #12171d 50%, #0d1218 100%);
-      background-attachment: fixed;
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      padding:32px;
-      display:flex;
-      justify-content:center;
-      min-height:100vh;
-    }
-    body::before{
-      content:'';
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      background: radial-gradient(circle at 20% 20%, rgba(59,158,255,0.08), transparent 50%),
-                  radial-gradient(circle at 80% 80%, rgba(52,211,153,0.05), transparent 50%);
-      pointer-events:none;
-      z-index:0;
-    }
-    .wrap{
-      width:100%;
-      max-width:var(--maxw);
-      position:relative;
-      z-index:1;
-    }
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%235b8cff'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EAD%3C/text%3E%3C/svg%3E">
 
-    header{
-      display:flex;
-      gap:24px;
-      align-items:center;
-      margin-bottom:32px;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 
-    .avatar{
-      width:120px;
-      height:120px;
-      border-radius:18px;
-      overflow:hidden;
-      border:2px solid var(--glass-border);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03);
-      flex:0 0 120px;
-      background:var(--panel);
-      position:relative;
-    }
-    .avatar::after{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:linear-gradient(135deg, rgba(59,158,255,0.1), transparent);
-      pointer-events:none;
-    }
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-
-    .title{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-    .name{
-      font-size:26px;
-      font-weight:800;
-      letter-spacing:-0.3px;
-      background: linear-gradient(135deg, var(--accent-light), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .headline{
-      color:var(--muted);
-      font-weight:500;
-      font-size:14px;
-      letter-spacing:0.2px;
-    }
-
-    .top-actions{
-      margin-left:auto;
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-    .btn{
-      background:var(--card);
-      border:1px solid var(--glass-border);
-      padding:10px 16px;
-      border-radius:11px;
-      color:inherit;
-      font-weight:600;
-      font-size:14px;
-      cursor:pointer;
-      text-decoration:none;
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      transition: all 0.2s ease;
-      position:relative;
-      overflow:hidden;
-    }
-    .btn::before{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:linear-gradient(135deg, rgba(59,158,255,0.1), transparent);
-      opacity:0;
-      transition:opacity 0.2s ease;
-    }
-    .btn:hover{
-      border-color:var(--accent);
-      transform:translateY(-2px);
-      box-shadow: 0 6px 20px var(--accent-glow);
-    }
-    .btn:hover::before{opacity:1}
-    .btn.ghost{background:transparent}
-    .btn.ghost:hover{background:rgba(59,158,255,0.05)}
-
-    main{
-      display:grid;
-      grid-template-columns: 1fr 360px;
-      gap:24px;
-    }
-
-    /* Left Column */
-    .panel{
-      background:var(--card);
-      border:1px solid var(--glass-border);
-      border-radius:var(--radius);
-      padding:24px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      backdrop-filter:blur(10px);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .panel:hover{
-      transform:translateY(-2px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-    }
-
-    .about p{
-      color:var(--muted);
-      margin:12px 0 0 0;
-      line-height:1.7;
-    }
-
-    .section-title{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      margin-bottom:16px;
-      padding-bottom:12px;
-      border-bottom:2px solid rgba(59,158,255,0.2);
-    }
-    .section-title h3{
-      margin:0;
-      font-size:17px;
-      font-weight:700;
-      letter-spacing:0.3px;
-      color:var(--accent-light);
-      text-transform:uppercase;
-    }
-    .small-muted{color:var(--muted);font-size:13px;font-weight:500}
-
-    /* Projects */
-    .projects-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap:14px;
-    }
-    .project-card{
-      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
-      border:1px solid rgba(255,255,255,0.04);
-      padding:16px;
-      border-radius:12px;
-      min-height:130px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      justify-content:space-between;
-      transition: all 0.3s ease;
-      position:relative;
-      overflow:hidden;
-    }
-    .project-card::before{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:linear-gradient(135deg, var(--accent-glow), transparent);
-      opacity:0;
-      transition:opacity 0.3s ease;
-    }
-    .project-card:hover{
-      border-color:var(--accent);
-      transform:translateY(-4px);
-      box-shadow: 0 8px 24px var(--accent-glow);
-    }
-    .project-card:hover::before{opacity:1}
-    .project-title{font-weight:700;font-size:15px;position:relative;z-index:1}
-    .project-title a{color:inherit;text-decoration:none}
-    .project-title a:hover{color:var(--accent-light)}
-    .project-desc{color:var(--muted);font-size:13px;line-height:1.5;position:relative;z-index:1}
-    .tags{display:flex;gap:6px;flex-wrap:wrap;position:relative;z-index:1}
-    .tag{
-      background:rgba(59,158,255,0.1);
-      padding:5px 10px;
-      border-radius:8px;
-      font-size:12px;
-      color:var(--accent-light);
-      font-weight:600;
-      border:1px solid rgba(59,158,255,0.2);
-    }
-
-    /* Right Column */
-    .side-section{display:flex;flex-direction:column;gap:18px}
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{
-      padding:10px 12px;
-      border-radius:10px;
-      background:rgba(59,158,255,0.08);
-      border:1px solid rgba(59,158,255,0.15);
-      font-size:13px;
-      color:var(--text);
-      font-weight:500;
-      transition: all 0.2s ease;
-    }
-    .skill:hover{
-      background:rgba(59,158,255,0.15);
-      transform:translateY(-2px);
-    }
-
-    .cert-list{display:flex;flex-direction:column;gap:10px}
-    .cert-item{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-size:13px;
-      color:var(--muted);
-      padding:8px 0;
-      border-bottom:1px solid rgba(255,255,255,0.03);
-    }
-    .cert-item:last-child{border-bottom:none}
-
-    footer{
-      margin-top:24px;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:flex-end;
-      color:var(--muted);
-      font-size:13px;
-      padding-top:20px;
-      border-top:1px solid var(--glass-border);
-    }
-
-    /* Contact / Links */
-    .socials{display:flex;gap:8px;align-items:center}
-    .socials a{color:var(--muted);text-decoration:none;font-weight:600;font-size:13px}
-
-    /* Add Project Modal/Form (simple) */
-    .modal{
-      position:fixed;
-      left:0;top:0;right:0;bottom:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(0,0,0,0.75);
-      backdrop-filter:blur(8px);
-      z-index:60;
-      padding:24px;
-    }
-    .modal-card{
-      width:100%;
-      max-width:720px;
-      background:var(--panel);
-      border-radius:14px;
-      padding:24px;
-      border:1px solid var(--glass-border);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    }
-    .form-row{display:flex;gap:10px;margin-bottom:12px}
-    .form-row input,.form-row textarea, .form-row select{
-      width:100%;
-      padding:12px;
-      border-radius:10px;
-      border:1px solid var(--glass-border);
-      background:rgba(255,255,255,0.02);
-      color:inherit;
-      font-size:14px;
-      transition: all 0.2s ease;
-    }
-    .form-row input:focus,.form-row textarea:focus{
-      outline:none;
-      border-color:var(--accent);
-      background:rgba(59,158,255,0.05);
-    }
-    .muted-note{color:var(--muted);font-size:13px;line-height:1.6}
-
-    /* Responsive */
-    @media (max-width:980px){
-      main{grid-template-columns:1fr}
-      .avatar{width:96px;height:96px}
-      .top-actions{margin-left:0;margin-top:12px}
-      header{flex-wrap:wrap}
-    }
-
-    /* Highlight effect for important elements */
-    .highlight-glow{
-      animation: pulse-glow 2s ease-in-out infinite;
-    }
-    @keyframes pulse-glow{
-      0%, 100%{box-shadow: 0 0 15px var(--accent-glow)}
-      50%{box-shadow: 0 0 25px rgba(59,158,255,0.3)}
-    }
-  </style>
+<script>
+  // Applied before paint to avoid a theme flash.
+  (function(){
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    document.documentElement.setAttribute('theme-init', '');
+    document.documentElement.dataset.theme = saved || (prefersLight ? 'light' : 'dark');
+  })();
+</script>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <div class="avatar" aria-hidden="true">
-        <!-- Replace profile.jpg with your own headshot file -->
-        <img src="profile.jpg" alt="Arman Dabiri — profile photo">
-      </div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-      <div class="title">
-        <div class="name">Arman Dabiri</div>
-        <div class="headline">Platform/Infrastructure Engineer — AWS · Terraform · VMware · Windows Server</div>
-        <div class="small-muted">Los Angeles, CA • Open to Cloud/DevOps roles</div>
-      </div>
+<div class="bg-fx" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
 
-      <div class="top-actions">
-        <a class="btn" href="https://github.com/armandabiri99" target="_blank" rel="noopener noreferrer">
-          <!-- GitHub SVG -->
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 .5C5.73.5.9 5.33.9 11.6c0 4.6 2.99 8.52 7.14 9.9.52.1.71-.23.71-.5 0-.25-.01-.91-.01-1.79-2.9.64-3.51-1.4-3.51-1.4-.48-1.2-1.18-1.52-1.18-1.52-.97-.66.07-.65.07-.65 1.07.08 1.64 1.1 1.64 1.1.95 1.64 2.5 1.16 3.11.88.1-.7.37-1.16.68-1.43-2.32-.27-4.76-1.16-4.76-5.16 0-1.13.39-2.05 1.05-2.78-.11-.27-.46-1.39.1-2.9 0 0 .86-.28 2.82 1.05a9.6 9.6 0 0 1 2.57-.35c.87.01 1.75.12 2.57.35 1.95-1.33 2.81-1.05 2.81-1.05.56 1.51.21 2.63.1 2.9.65.73 1.05 1.65 1.05 2.78 0 4.01-2.45 4.88-4.78 5.14.38.33.72.98.72 1.98 0 1.43-.01 2.58-.01 2.93 0 .27.18.61.72.5 4.15-1.38 7.13-5.3 7.13-9.9C23.1 5.33 18.27.5 12 .5z" fill="currentColor"/></svg>
-          GitHub
-        </a>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-        <a class="btn ghost" href="Arman-Dabiri-Resume.pdf" download>
-          Resume
-        </a>
-      </div>
-    </header>
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home">
+      <span class="brand-mark" aria-hidden="true">AD</span>
+      <span class="brand-text">Arman Dabiri <span>/ Infrastructure</span></span>
+    </a>
 
-    <main>
-      <!-- Left column -->
-      <div style="display:flex;flex-direction:column;gap:20px">
-        <section class="panel about" aria-labelledby="about">
-          <div class="section-title">
-            <h3 id="about">About</h3>
-            <div class="small-muted">Technical Portfolio</div>
-          </div>
+    <nav class="nav-links" id="navLinks" aria-label="Section navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-          <p>
-            AWS Cloud and Hybrid Infrastructure Engineer with experience designing, deploying, and supporting modern infrastructure across both cloud and enterprise environments. Skilled in building scalable AWS workloads, automating infrastructure with Terraform and CloudFormation, and managing secure production environments across Linux and Windows platforms.
-            
-In my current role within a managed services environment, I operate and modernize infrastructure for multi-site healthcare organizations, supporting hybrid architectures that integrate AWS, VMware, and on-premises systems. My work includes cloud deployments, identity integration (Active Directory and Entra ID), infrastructure automation, and disaster recovery design.
-
-I enjoy helping organizations transition from traditional infrastructure to cloud platforms while maintaining reliability, security, and operational efficiency.
-          </p>
-
-          <p class="muted-note" style="margin-top:12px">
-            📍 Address: Los Angeles, CA • 📞 +1 ***-***-**** • ✉️ arman_dabiri@hotmail.com
-          </p>
-        </section>
-
-        <section class="panel" aria-labelledby="projects">
-          <div class="section-title">
-            <h3 id="projects">Projects</h3>
-            <div class="small-muted">Portfolio Showcase</div>
-          </div>
-
-          <div class="projects-grid" id="projectsGrid">
-            <!-- Project 1 -->
-            <div class="project-card">
-              <div>
-                <div class="project-title">
-                  <a href="https://github.com/armandabiri99/aws-workspaces-image-upgrade" target="_blank" rel="noopener noreferrer">
-                    Amazon WorkSpaces One‑Shot Image Upgrade Automation
-                  </a>
-                </div>
-                <div class="project-desc">
-                  CloudFormation + Step Functions pipeline to orchestrate snapshot‑aware image upgrades for Amazon WorkSpaces fleets,
-                  optional SSM user notifications, controlled rebuilds, and CSV reporting to S3.
-                </div>
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-                <div class="tags">
-                  <span class="tag">AWS</span>
-                  <span class="tag">CloudFormation</span>
-                  <span class="tag">Step Functions</span>
-                  <span class="tag">Lambda</span>
-                </div>
-                <a href="https://github.com/armandabiri99/aws-workspaces-image-upgrade"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn ghost"
-                  style="font-size:12px;padding:6px 10px;">
-                  View on GitHub
-                </a>
-              </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-              <div>
-                <div class="project-title">
-                  <a href="https://github.com/armandabiri99/AWS_Multi_Tier_Webapp_Infra" target="_blank" rel="noopener noreferrer">
-                    Secure 3‑Tier VPC with ALB, ASG & RDS (Terraform)
-                  </a>
-                </div>
-                <div class="project-desc">
-                  Production‑style AWS baseline: multi‑AZ VPC, public/private subnets, ALB + Auto Scaling, RDS MySQL, SSM parameters,
-                  hardened security groups, and CI/CD ready AMI pipeline.
-                </div>
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-                <div class="tags">
-                  <span class="tag">Terraform</span>
-                  <span class="tag">ALB/ASG</span>
-                  <span class="tag">RDS</span>
-                  <span class="tag">SSM</span>
-                </div>
-                <a href="https://github.com/armandabiri99/AWS_Multi_Tier_Webapp_Infra"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn ghost"
-                  style="font-size:12px;padding:6px 10px;">
-                  View on GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel" aria-labelledby="experience">
-          <div class="section-title">
-            <h3 id="experience">Summary & Experience</h3>
-            <div class="small-muted">Key Highlights</div>
-          </div>
-
-          <p class="small-muted" style="margin-top:16px; line-height:1.7; font-size:15px; font-weight:bold;">
-            Network Experts, Inc — Platform / Infrastructure Engineer (Hybrid) (May 2024 – Present), Systems Engineer (Sep 2023 – May 2024)
-          </p>
-          <ul style="margin-top:8px;color:var(--muted);line-height:1.8;padding-left:20px">
-            <li>Owned and operated hybrid infrastructure (Windows Server, Linux, VMware, AWS, Azure) across multiple healthcare and dental sites, improving system reliability and security.</li>
-            <li>Implemented identity and access controls with Active Directory, Entra ID (Azure AD), Okta, and Duo, adding MFA, SSO, and lifecycle processes, which reduced unauthorized access incidents.</li>
-            <li>Designed standardized infrastructure patterns and automated cloud foundations and operational tasks with Terraform, CloudFormation, PowerShell, and Bash, speeding up deployment cycles.</li>
-            <li>Led on‑prem and cloud migrations of directory services, file services, and line‑of‑business apps, achieving minimal downtime.</li>
-            <li>Designed and maintained backup and disaster recovery solutions, regularly validating restores to ensure business continuity requirements were met.</li>
-          </ul>
-
-          <p class="small-muted" style="margin-top:16px; line-height:1.7; font-size:15px; font-weight:bold;">
-            Medis Holding — System Administrator (Jun 2020 – Jul 2023)
-          </p>
-          <ul style="margin-top:8px;color:var(--muted);line-height:1.8;padding-left:20px">
-            <li>Administered 60+ physical and virtual servers across Windows, Linux, and macOS environments, ensuring high availability and performance.</li>
-            <li>Administered Active Directory and Microsoft 365 environments with PowerShell and Group Policy, strengthening authentication and access control and lowering unauthorized‑access incidents.</li>
-            <li>Designed and operated VMware vCenter and vSAN clusters, managing capacity and system reliability.</li>
-            <li>Managed core infrastructure services like Active Directory, DNS, DHCP, file shares, and backup solutions using Group Policy and Veeam, ensuring consistent service availability and successful daily backups.</li>
-            <li>Implemented monitoring, networking, and disaster recovery improvements that reduced downtime and improved recoverability.</li>
-          </ul>
-
-          <p class="small-muted" style="margin-top:16px;line-height:1.7">
-            Education: Westcliff University (MS, IT – Cloud Computing, 2023–2025); Shiraz University of Technology (BS, ECE, 2017–2021)
-          </p>
-        </section>
-      </div>
-
-      <!-- Right column -->
-      <aside class="side-section">
-        <div class="panel">
-          <div class="section-title">
-            <h3>Skills</h3>
-            <div class="small-muted">Core Technologies</div>
-          </div>
-          <div class="skills" id="skillsList">
-            <span class="skill">AWS (EC2, VPC, IAM, RDS, S3, CloudWatch)</span>
-            <span class="skill">Terraform & CloudFormation</span>
-            <span class="skill">Ansible</span>
-            <span class="skill">Windows Server & AD</span>
-            <span class="skill">VMware (vCenter, vSAN)</span>
-            <span class="skill">Networking (VPN, DNS, VLAN)</span>
-            <span class="skill">MikroTik & Cisco</span>
-            <span class="skill">CI/CD Fundamentals</span>
-            <span class="skill">Linux Administration</span>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="section-title">
-            <h3>Certifications</h3>
-            <div class="small-muted">Professional</div>
-          </div>
-          <div class="cert-list">
-            <div class="cert-item">✅ HashiCorp Certified: Terraform Associate (004)</div>
-            <div class="cert-item">✅ AWS Certified Solutions Architect – Associate</div>
-            <div class="cert-item">✅ AWS Certified Cloud Practitioner</div>
-            <div class="cert-item">✅ CCNA Routing & Switching (2018)</div>
-            <div class="cert-item">✅ MCSA Windows Server 2016</div>
-            <div class="cert-item">✅ LPIC 1 & LPIC 2</div>
-            <div class="cert-item">✅ Fortinet: Evolution of Access to Applications with ZTNA</div>
-            <div class="cert-item">✅ Fortinet: Securing the Hybrid Workforce with SASE</div>
-            <div class="cert-item">✅ Public Cloud Security — Visibility & Control</div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="section-title">
-            <h3>Contact</h3>
-            <div class="small-muted">Let's Connect</div>
-          </div>
-
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <div class="small-muted">Email</div>
-            <a class="btn" href="mailto:arman_dabiri@hotmail.com">arman_dabiri@hotmail.com</a>
-
-            <div class="small-muted" style="margin-top:6px">Phone</div>
-            <div class="muted-note">+1 ***-***-****</div>
-
-            <div class="small-muted" style="margin-top:6px">LinkedIn</div>
-            <a class="socials btn ghost" href="https://www.linkedin.com/in/arman-dabiri-266178189" target="_blank" rel="noopener noreferrer">
-              View LinkedIn
-            </a>
-
-            <div style="margin-top:12px;display:flex;gap:8px">
-              <a class="btn" href="Arman-Dabiri-Resume.pdf" download>Download Resume</a>
-              <a class="btn ghost" href="mailto:arman_dabiri@hotmail.com">Contact</a>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </main>
-
-    <footer>
-      <div class="small-muted">© <span id="year"></span> Arman Dabiri — Hosted on GitHub Pages</div>
-    </footer>
-  </div>
-
-  <!-- (Optional) Add Project Modal - hidden by default -->
-  <div id="projectModal" class="modal" style="display:none" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-card" role="document">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-        <h3 style="margin:0;color:var(--accent-light)">Add Project</h3>
-        <button class="btn ghost" id="closeModal">Close</button>
-      </div>
-
-      <div class="muted-note" style="margin-bottom:14px">Fill fields and click "Add" — the project card will be created locally in the page. To make it permanent, paste the generated HTML into this page or add to a projects JSON file in your repo.</div>
-
-      <div class="form-row">
-        <input id="projTitle" placeholder="Project Title (e.g., WorkSpaces Automation)" />
-      </div>
-      <div class="form-row">
-        <input id="projRepo" placeholder="GitHub Repo URL (https://github.com/username/repo)" />
-      </div>
-      <div class="form-row">
-        <input id="projTags" placeholder="Tags (comma separated — e.g., AWS, Terraform, CI/CD)" />
-      </div>
-      <div class="form-row">
-        <textarea id="projDesc" placeholder="Short description (one sentence)" rows="3"></textarea>
-      </div>
-
-      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:12px">
-        <button class="btn ghost" id="cancelAdd">Cancel</button>
-        <button class="btn" id="confirmAdd">Add Project</button>
-      </div>
+    <div class="nav-actions">
+      <a class="btn btn-sm nav-resume" href="Arman-Dabiri-Resume.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Resume
+      </a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
     </div>
   </div>
+</header>
 
-  <script>
-  // Set current year in footer
-  document.getElementById('year').innerText = new Date().getFullYear();
+<main id="main">
 
-  // Ensure DOM is ready before wiring events
-  document.addEventListener('DOMContentLoaded', function () {
-    const addBtn         = document.getElementById('addProjectBtn');
-    const modal          = document.getElementById('projectModal');
-    const closeBtn       = document.getElementById('closeModal');
-    const cancelAdd      = document.getElementById('cancelAdd');
-    const confirmAdd     = document.getElementById('confirmAdd');
-    const projectsGrid   = document.getElementById('projectsGrid');
+  <!-- ================= HERO ================= -->
+  <section class="section hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="pill"><span class="dot" aria-hidden="true"></span> Open to Systems, Infrastructure &amp; Cloud Engineering roles</span>
 
-    if (!modal || !projectsGrid) return;
+          <h1>Arman Dabiri</h1>
+          <p class="hero-role">Lead IT &amp; Infrastructure Engineer — AWS &amp; Hybrid Cloud</p>
 
-    function openModal() {
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden', 'false');
-      const titleInput = document.getElementById('projTitle');
-      if (titleInput) titleInput.focus();
-      document.body.style.overflow = 'hidden';
-    }
+          <p class="hero-sub">
+            I design, automate and operate infrastructure that has to stay up — AWS and hybrid
+            environments, identity and endpoint security, and multi-site networks for robotics,
+            healthcare and enterprise clients.
+          </p>
 
-    function closeModalFunc() {
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      ['projTitle','projRepo','projTags','projDesc'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.value = '';
-      });
-    }
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#projects">
+              View my work
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a class="btn" href="mailto:arman_dabiri@hotmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              Get in touch
+            </a>
+            <a class="btn" href="Arman-Dabiri-Resume.pdf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Resume
+            </a>
+          </div>
 
-    if (addBtn) {
-      addBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        openModal();
-      });
-    }
+          <div class="hero-meta">
+            <span class="meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Los Angeles, California
+            </span>
+            <span class="meta-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+              AWS · Terraform · Identity · Endpoint
+            </span>
+            <a class="meta-chip" href="https://www.linkedin.com/in/arman-dabiri-266178189" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.78-2C20.5 8.7 22 11 22 14.6V21h-4v-5.7c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg>
+              LinkedIn
+            </a>
+            <a class="meta-chip" href="https://github.com/armandabiri99" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.9 5.33.9 11.6c0 4.6 2.99 8.52 7.14 9.9.52.1.71-.23.71-.5 0-.25-.01-.91-.01-1.79-2.9.64-3.51-1.4-3.51-1.4-.48-1.2-1.18-1.52-1.18-1.52-.97-.66.07-.65.07-.65 1.07.08 1.64 1.1 1.64 1.1.95 1.64 2.5 1.16 3.11.88.1-.7.37-1.16.68-1.43-2.32-.27-4.76-1.16-4.76-5.16 0-1.13.39-2.05 1.05-2.78-.11-.27-.46-1.39.1-2.9 0 0 .86-.28 2.82 1.05a9.6 9.6 0 0 1 2.57-.35c.87.01 1.75.12 2.57.35 1.95-1.33 2.81-1.05 2.81-1.05.56 1.51.21 2.63.1 2.9.65.73 1.05 1.65 1.05 2.78 0 4.01-2.45 4.88-4.78 5.14.38.33.72.98.72 1.98 0 1.43-.01 2.58-.01 2.93 0 .27.18.61.72.5 4.15-1.38 7.13-5.3 7.13-9.9C23.1 5.33 18.27.5 12 .5z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
 
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        closeModalFunc();
-      });
-    }
+        <div class="portrait">
+          <div class="portrait-frame">
+            <img src="profile.jpg" alt="Arman Dabiri" width="264" height="316">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    if (cancelAdd) {
-      cancelAdd.addEventListener('click', function (e) {
-        e.preventDefault();
-        closeModalFunc();
-      });
-    }
+  <!-- ================= STATS ================= -->
+  <section class="section" aria-label="Career highlights" style="padding-top:0">
+    <div class="container">
+      <div class="stats reveal">
+        <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Years across cloud &amp; enterprise infrastructure</div></div>
+        <div class="stat"><div class="stat-num">60+</div><div class="stat-label">Physical &amp; virtual servers administered</div></div>
+        <div class="stat"><div class="stat-num">99.9%</div><div class="stat-label">Uptime on a multi-site cloud deployment</div></div>
+        <div class="stat"><div class="stat-num">30%</div><div class="stat-label">Cloud cost reduction for client workloads</div></div>
+      </div>
+    </div>
+  </section>
 
-    // Close on ESC
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && modal.style.display === 'flex') {
-        closeModalFunc();
-      }
-    });
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">About</span>
+        <h2>Infrastructure that stays boring — on purpose</h2>
+      </div>
 
-    // Close when clicking outside the modal card
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal) closeModalFunc();
-    });
+      <div class="card reveal" style="max-width:none">
+        <p style="color:var(--text-dim);font-size:16px">
+          AWS Cloud and Hybrid Infrastructure Engineer with experience designing, deploying and supporting modern
+          infrastructure across both cloud and enterprise environments. I build scalable AWS workloads, automate
+          infrastructure with Terraform and CloudFormation, and run secure production environments on Linux and Windows.
+        </p>
+        <p style="color:var(--muted);font-size:15.5px;margin-top:16px">
+          In a managed-services environment I operate and modernize infrastructure for multi-site healthcare, dental and
+          enterprise client organizations, supporting hybrid architectures that integrate AWS, VMware and on-premises
+          systems — cloud deployments, identity integration (Active Directory and Entra ID), infrastructure automation
+          and disaster recovery design. For key client accounts I serve as the primary technical owner, managing
+          networking, endpoint and device lifecycle, identity administration and day-to-day IT operations end to end.
+        </p>
+        <p style="color:var(--muted);font-size:15.5px;margin-top:16px">
+          I enjoy helping organizations move from traditional infrastructure to cloud platforms while keeping
+          reliability, security and operational efficiency intact.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    // Confirm add project
-    if (confirmAdd) {
-      confirmAdd.addEventListener('click', function (e) {
-        e.preventDefault();
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Experience</span>
+        <h2>Where I've been building</h2>
+        <p>Six years of systems, cloud and platform work — from a 60-server on-prem estate to a modern, fully cloud-managed device and identity fleet.</p>
+      </div>
 
-        const title = (document.getElementById('projTitle') || {}).value?.trim() || '';
-        const repo  = (document.getElementById('projRepo')  || {}).value?.trim() || '';
-        const tags  = (document.getElementById('projTags')  || {}).value?.trim() || '';
-        const desc  = (document.getElementById('projDesc')  || {}).value?.trim() || '';
+      <div class="timeline">
 
-        if (!title) {
-          alert('Please add a project title.');
-          return;
-        }
+        <article class="tl-item current reveal">
+          <div class="tl-head">
+            <h3 class="tl-role">Lead IT &amp; Infrastructure Engineer</h3>
+            <span class="badge-now">Current</span>
+            <span class="tl-when">Jun 2026 — Present</span>
+          </div>
+          <div class="tl-where"><strong style="color:var(--accent)">Network Experts, Inc</strong> — COCO Delivery / Cyan Robotics client engagement · Los Angeles, CA</div>
+          <ul class="bullets">
+            <li>Primary technical owner for COCO's day-to-day IT operations, infrastructure, endpoint management, identity, security and escalations as their dedicated Network Experts engineer.</li>
+            <li>Own endpoint management and security across the fleet with Kandji, Apple Business Manager, Atera RMM and Huntress EDR — enrollment, provisioning, patching, compliance and device lifecycle.</li>
+            <li>Administer Google Workspace identity and access: user and group provisioning, security policies, onboarding/offboarding and administrative escalations; implemented Rippling SSO to streamline access management.</li>
+            <li>Manage multi-site Ubiquiti UniFi infrastructure — gateways, switching, Wi-Fi, UniFi Protect and UniFi Access — for reliable connectivity and centralized administration.</li>
+            <li>Implement endpoint security and compliance controls including FileVault, CIS-aligned macOS hardening and MDM baselines.</li>
+            <li>Own IT incident response and escalations through Linear, coordinating directly with engineering and leadership on operational and infrastructure initiatives.</li>
+          </ul>
+        </article>
 
-        const card = document.createElement('div');
-        card.className = 'project-card';
+        <article class="tl-item current reveal">
+          <div class="tl-head">
+            <h3 class="tl-role">Platform / Infrastructure Engineer</h3>
+            <span class="tl-when">May 2024 — Present</span>
+          </div>
+          <div class="tl-where"><strong style="color:var(--accent)">Network Experts, Inc</strong> — Hybrid · Beverly Hills, CA</div>
+          <ul class="bullets">
+            <li>Owned and operated hybrid infrastructure (Windows Server, Linux, VMware, AWS, Azure) across multiple healthcare and dental sites, improving system reliability and security.</li>
+            <li>Implemented identity and access controls with Active Directory, Entra ID, Okta and Duo — adding MFA, SSO and lifecycle processes that reduced unauthorized access incidents.</li>
+            <li>Designed standardized infrastructure patterns and automated cloud foundations with Terraform, CloudFormation, PowerShell and Bash, speeding up deployment cycles.</li>
+            <li>Led on-prem and cloud migrations of directory services, file services and line-of-business apps with minimal downtime.</li>
+            <li>Designed and maintained backup and disaster recovery solutions, validating restores against business continuity requirements.</li>
+            <li>Conducted Microsoft 365 tenant assessments for SMB clients, auditing Power Automate flows and SharePoint governance and delivering prioritized remediation roadmaps.</li>
+          </ul>
+        </article>
 
-        const top = document.createElement('div');
+        <article class="tl-item reveal">
+          <div class="tl-head">
+            <h3 class="tl-role">Systems Engineer</h3>
+            <span class="tl-when">Sep 2023 — May 2024</span>
+          </div>
+          <div class="tl-where"><strong style="color:var(--accent)">Network Experts, Inc</strong> — Operations &amp; Automation · Beverly Hills, CA</div>
+          <ul class="bullets">
+            <li>Supported Windows, macOS and Linux platforms in regulated healthcare settings, applying security-hardening procedures that maintained compliance and reduced support tickets.</li>
+            <li>Administered Active Directory and Microsoft 365 with PowerShell and Group Policy, strengthening authentication and access control.</li>
+            <li>Operated endpoint monitoring and security platforms (Atera, Huntress), responding to incidents and holding SLA targets.</li>
+            <li>Ran backup and recovery operations with Synology, Axcient and Microsoft 365 retention tooling, testing restores against recovery time objectives.</li>
+          </ul>
+        </article>
 
-        const titleEl = document.createElement('div');
-        titleEl.className = 'project-title';
-        if (repo) {
-          const a = document.createElement('a');
-          a.href = repo;
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
-          a.textContent = title;
-          titleEl.appendChild(a);
-        } else {
-          titleEl.textContent = title;
-        }
+        <article class="tl-item reveal">
+          <div class="tl-head">
+            <h3 class="tl-role">System Administrator</h3>
+            <span class="tl-when">Jun 2020 — Jul 2023</span>
+          </div>
+          <div class="tl-where"><strong style="color:var(--accent)">Medis Holding</strong> — Shiraz, Iran</div>
+          <ul class="bullets">
+            <li>Administered 60+ physical and virtual servers across Windows, Linux and macOS, ensuring high availability and performance.</li>
+            <li>Designed and operated VMware vCenter and vSAN clusters, managing capacity and system reliability.</li>
+            <li>Managed core infrastructure services — Active Directory, DNS, DHCP, file shares and backups with Group Policy and Veeam.</li>
+            <li>Implemented monitoring, networking and disaster recovery improvements that reduced downtime and improved recoverability.</li>
+          </ul>
+        </article>
 
-        const descEl = document.createElement('div');
-        descEl.className = 'project-desc';
-        descEl.textContent = desc || 'No description provided';
+      </div>
+    </div>
+  </section>
 
-        top.appendChild(titleEl);
-        top.appendChild(descEl);
+  <!-- ================= PROJECTS ================= -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Projects</span>
+        <h2>Selected work</h2>
+        <p>Open-source automation and infrastructure-as-code, plus client engagements delivered end to end.</p>
+      </div>
 
-        const bottom = document.createElement('div');
-        bottom.style.display = 'flex';
-        bottom.style.justifyContent = 'space-between';
-        bottom.style.alignItems = 'center';
+      <div class="proj-grid">
 
-        const tagsEl = document.createElement('div');
-        tagsEl.className = 'tags';
-        if (tags) {
-          tags.split(',')
-              .map(t => t.trim())
-              .filter(Boolean)
-              .forEach(t => {
-                const s = document.createElement('span');
-                s.className = 'tag';
-                s.textContent = t;
-                tagsEl.appendChild(s);
-              });
-        } else {
-          const s = document.createElement('span');
-          s.className = 'tag';
-          s.textContent = 'General';
-          tagsEl.appendChild(s);
-        }
+        <article class="card proj reveal">
+          <div>
+            <div class="proj-kicker">Open source · AWS</div>
+            <h3><a href="https://github.com/armandabiri99/aws-workspaces-image-upgrade" target="_blank" rel="noopener noreferrer">WorkSpaces One-Shot Image Upgrade Automation</a></h3>
+          </div>
+          <p>CloudFormation and Step Functions pipeline that orchestrates snapshot-aware image upgrades for Amazon WorkSpaces fleets — tag-based targeting, optional SSM user notifications, controlled rebuilds and CSV reporting to S3.</p>
+          <div class="tags">
+            <span class="tag">CloudFormation</span><span class="tag">Step Functions</span><span class="tag">Lambda</span><span class="tag">SSM</span>
+          </div>
+          <div class="proj-foot">
+            <span class="stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L7 14.2l-5-4.9 6.9-1z"/></svg> 2</span>
+            <a class="link-arrow" href="https://github.com/armandabiri99/aws-workspaces-image-upgrade" target="_blank" rel="noopener noreferrer">
+              View repo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
 
-        const meta = document.createElement('div');
-        meta.style.fontSize = '12px';
-        meta.style.color = 'var(--muted)';
-        meta.textContent = new Date().getFullYear();
+        <article class="card proj reveal">
+          <div>
+            <div class="proj-kicker">Open source · Terraform</div>
+            <h3><a href="https://github.com/armandabiri99/AWS_Multi_Tier_Webapp_Infra" target="_blank" rel="noopener noreferrer">Secure 3-Tier VPC with ALB, ASG &amp; RDS</a></h3>
+          </div>
+          <p>Production-style AWS baseline in Terraform: multi-AZ VPC with public and private subnets, Application Load Balancer, Auto Scaling, RDS MySQL, SSM parameters, hardened security groups and a CI/CD-ready AMI pipeline.</p>
+          <div class="tags">
+            <span class="tag">Terraform</span><span class="tag">ALB / ASG</span><span class="tag">RDS</span><span class="tag">Multi-AZ VPC</span>
+          </div>
+          <div class="proj-foot">
+            <span class="stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L7 14.2l-5-4.9 6.9-1z"/></svg> 5</span>
+            <a class="link-arrow" href="https://github.com/armandabiri99/AWS_Multi_Tier_Webapp_Infra" target="_blank" rel="noopener noreferrer">
+              View repo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
 
-        bottom.appendChild(tagsEl);
-        bottom.appendChild(meta);
+        <article class="card proj reveal">
+          <div>
+            <div class="proj-kicker">Client engagement · Healthcare</div>
+            <h3>OpenDental Multi-Site Cloud Implementation</h3>
+          </div>
+          <p>Led the end-to-end design and deployment of cloud-hosted OpenDental for a multi-location dental practice: migrated per-site on-premise databases to a centralized server with secure VPN connectivity and image-folder synchronization, unified access through Active Directory, and enforced HIPAA-aligned controls — reaching 99.9% uptime for 200+ staff.</p>
+          <div class="tags">
+            <span class="tag">Cloud migration</span><span class="tag">VPN</span><span class="tag">Active Directory</span><span class="tag">HIPAA</span>
+          </div>
+        </article>
 
-        card.appendChild(top);
-        card.appendChild(bottom);
+        <article class="card proj reveal">
+          <div>
+            <div class="proj-kicker">Client engagement · Microsoft 365</div>
+            <h3>M365 Tenant Audit &amp; Automation Recovery</h3>
+          </div>
+          <p>Onboarded and assessed a law firm's Microsoft 365 tenant, inventorying 16 Power Automate flows and 12 SharePoint sites. Authored an operations runbook covering every flow, connection dependency and remediation path, restored automations broken by a credential rotation with zero data loss, and delivered a prioritized remediation roadmap.</p>
+          <div class="tags">
+            <span class="tag">Microsoft 365</span><span class="tag">Power Automate</span><span class="tag">SharePoint</span><span class="tag">Runbook</span>
+          </div>
+        </article>
 
-        projectsGrid.appendChild(card);
-        closeModalFunc();
-      });
-    }
-  });
-  </script>
+        <article class="card proj reveal">
+          <div>
+            <div class="proj-kicker">Open source · Tooling</div>
+            <h3><a href="https://github.com/armandabiri99/MSP-Pricing-Calculator" target="_blank" rel="noopener noreferrer">MSP Pricing Calculator</a></h3>
+          </div>
+          <p>A native macOS/iOS utility for managed-service providers to model per-seat and per-device pricing, margins and contract scenarios without wrestling with a spreadsheet.</p>
+          <div class="tags">
+            <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">MSP Ops</span>
+          </div>
+          <div class="proj-foot">
+            <span class="stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L7 14.2l-5-4.9 6.9-1z"/></svg> 1</span>
+            <a class="link-arrow" href="https://github.com/armandabiri99/MSP-Pricing-Calculator" target="_blank" rel="noopener noreferrer">
+              View repo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="card proj reveal">
+          <div>
+            <div class="proj-kicker">Client engagement · Cloud economics</div>
+            <h3>Cloud Cost Reduction &amp; App Migration</h3>
+          </div>
+          <p>Cut client cloud spend by 30% through auto-scaling policies and reserved-instance strategy, and led the migration of two enterprise applications to AWS and Azure with improved performance and reliability.</p>
+          <div class="tags">
+            <span class="tag">Cost optimization</span><span class="tag">Auto Scaling</span><span class="tag">AWS</span><span class="tag">Azure</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Capabilities</span>
+        <h2>Tools I work with daily</h2>
+      </div>
+
+      <div class="skill-grid">
+
+        <div class="card skill-card reveal">
+          <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span> Cloud &amp; IaC</h3>
+          <div class="chips">
+            <span class="chip">AWS EC2</span><span class="chip">VPC</span><span class="chip">IAM</span><span class="chip">S3</span>
+            <span class="chip">RDS</span><span class="chip">CloudWatch</span><span class="chip">WorkSpaces</span>
+            <span class="chip">Microsoft Azure</span><span class="chip">Terraform</span><span class="chip">CloudFormation</span>
+            <span class="chip">Ansible</span>
+          </div>
+        </div>
+
+        <div class="card skill-card reveal">
+          <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> Identity &amp; Access</h3>
+          <div class="chips">
+            <span class="chip">Active Directory</span><span class="chip">Entra ID</span><span class="chip">Okta</span>
+            <span class="chip">Duo</span><span class="chip">Google Workspace</span><span class="chip">Rippling SSO</span>
+            <span class="chip">MFA / SSO</span><span class="chip">Group Policy</span><span class="chip">Lifecycle automation</span>
+          </div>
+        </div>
+
+        <div class="card skill-card reveal">
+          <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Endpoint &amp; Security</h3>
+          <div class="chips">
+            <span class="chip">Kandji MDM</span><span class="chip">Apple Business Manager</span><span class="chip">Atera RMM</span>
+            <span class="chip">Huntress EDR</span><span class="chip">FileVault</span><span class="chip">CIS macOS hardening</span>
+            <span class="chip">Fortinet ZTNA</span><span class="chip">SASE</span><span class="chip">HIPAA</span>
+          </div>
+        </div>
+
+        <div class="card skill-card reveal">
+          <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></span> Networking</h3>
+          <div class="chips">
+            <span class="chip">Ubiquiti UniFi</span><span class="chip">UniFi Protect</span><span class="chip">UniFi Access</span>
+            <span class="chip">SonicWall</span><span class="chip">Cisco Firepower</span><span class="chip">MikroTik</span>
+            <span class="chip">Site-to-site VPN</span><span class="chip">DNS / DHCP</span><span class="chip">VLAN design</span>
+          </div>
+        </div>
+
+        <div class="card skill-card reveal">
+          <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span> Systems &amp; Virtualization</h3>
+          <div class="chips">
+            <span class="chip">Windows Server</span><span class="chip">Linux (RHEL / Ubuntu)</span><span class="chip">macOS</span>
+            <span class="chip">VMware vCenter</span><span class="chip">vSAN</span><span class="chip">Microsoft 365</span>
+            <span class="chip">Veeam</span><span class="chip">Axcient</span><span class="chip">Cohesity</span>
+            <span class="chip">Backup &amp; DR</span>
+          </div>
+        </div>
+
+        <div class="card skill-card reveal">
+          <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span> Automation &amp; Operations</h3>
+          <div class="chips">
+            <span class="chip">PowerShell</span><span class="chip">Bash</span><span class="chip">Power Automate</span>
+            <span class="chip">Zapier</span><span class="chip">Linear</span><span class="chip">PRTG</span>
+            <span class="chip">CI/CD</span><span class="chip">Kubernetes fundamentals</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS ================= -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Certifications</span>
+        <h2>Credentials</h2>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>HashiCorp Certified: Terraform Associate (004)</div></div>
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>AWS Certified Solutions Architect — Associate</div></div>
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>AWS Certified Cloud Practitioner</div></div>
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>Okta Certified Administrator<small>Hands-On Configuration Exam</small></div></div>
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>Okta Certified Professional<small>Hands-On Configuration Exam for OIE</small></div></div>
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>Fortinet ZTNA &amp; SASE Security<small>Zero-trust access and hybrid workforce security</small></div></div>
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>Certified Ethical Hacker (CEH)</div></div>
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>Certified Security Professional (CSP)<small>Penetration Testing with Kali Linux</small></div></div>
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>Certified Linux Administrator<small>LPIC-1, LPIC-2, LPIC-3 (304)</small></div></div>
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>Cisco Certified Network Associate (CCNA)<small>Routing &amp; Switching</small></div></div>
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>Microsoft Certified Solutions Associate<small>Windows Server 2016</small></div></div>
+        <div class="cert reveal"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div>CompTIA Network+</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Education &amp; Honors</span>
+        <h2>Academic background</h2>
+      </div>
+
+      <div class="edu-grid">
+        <div class="card reveal">
+          <div class="edu-school">Westcliff University</div>
+          <div class="edu-degree">M.S. — Information Technology, Cloud Computing</div>
+          <div class="edu-when">Aug 2023 — Aug 2025 · GPA 3.92 / 4.0</div>
+          <ul class="edu-notes">
+            <li>Founder's Scholarship for Information Technology (Graduate)</li>
+          </ul>
+        </div>
+
+        <div class="card reveal">
+          <div class="edu-school">Shiraz University of Technology</div>
+          <div class="edu-degree">B.Sc. — Electrical, Electronics &amp; Communications Engineering</div>
+          <div class="edu-when">Sep 2017 — Dec 2021 · GPA 3.14 / 4.0</div>
+          <ul class="edu-notes">
+            <li>Thesis: <em>Design and Development of an Automated Access Control System</em> — Supervisor: Prof. Mohammad Reza Salehi</li>
+          </ul>
+        </div>
+
+        <div class="card honors reveal">
+          <h3 style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:16px">Honors &amp; Awards</h3>
+          <div class="honor-list">
+            <div class="honor">
+              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.9 7 22l5-3 5 3-1.2-8.1"/></svg></span>
+              Ranked in the top 3% of the national university entrance exam
+            </div>
+            <div class="honor">
+              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 10-10-5L2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+              Full scholarship, Shiraz University of Technology (tuition waived)
+            </div>
+            <div class="honor">
+              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg></span>
+              Founder's Scholarship for Information Technology (Graduate)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact reveal">
+        <h2>Let's build something reliable</h2>
+        <p>Actively interviewing for the roles below, and always happy to talk infrastructure, automation or identity architecture.</p>
+        <div class="role-targets" aria-label="Roles I am targeting">
+          <span class="chip">Systems Engineer</span>
+          <span class="chip">Senior / Lead Systems Engineer</span>
+          <span class="chip">Infrastructure Engineer</span>
+          <span class="chip">IT Systems Engineer</span>
+          <span class="chip">Site Reliability Engineer</span>
+          <span class="chip">Solutions Architect</span>
+          <span class="chip">Systems Administrator</span>
+          <span class="chip">Network &amp; Communications Engineer</span>
+          <span class="chip">Technical Account Manager</span>
+        </div>
+        <div class="contact-cta">
+          <a class="btn btn-primary" href="mailto:arman_dabiri@hotmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            arman_dabiri@hotmail.com
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/arman-dabiri-266178189" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.78-2C20.5 8.7 22 11 22 14.6V21h-4v-5.7c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn" href="https://github.com/armandabiri99" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.9 5.33.9 11.6c0 4.6 2.99 8.52 7.14 9.9.52.1.71-.23.71-.5 0-.25-.01-.91-.01-1.79-2.9.64-3.51-1.4-3.51-1.4-.48-1.2-1.18-1.52-1.18-1.52-.97-.66.07-.65.07-.65 1.07.08 1.64 1.1 1.64 1.1.95 1.64 2.5 1.16 3.11.88.1-.7.37-1.16.68-1.43-2.32-.27-4.76-1.16-4.76-5.16 0-1.13.39-2.05 1.05-2.78-.11-.27-.46-1.39.1-2.9 0 0 .86-.28 2.82 1.05a9.6 9.6 0 0 1 2.57-.35c.87.01 1.75.12 2.57.35 1.95-1.33 2.81-1.05 2.81-1.05.56 1.51.21 2.63.1 2.9.65.73 1.05 1.65 1.05 2.78 0 4.01-2.45 4.88-4.78 5.14.38.33.72.98.72 1.98 0 1.43-.01 2.58-.01 2.93 0 .27.18.61.72.5 4.15-1.38 7.13-5.3 7.13-9.9C23.1 5.33 18.27.5 12 .5z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© <span id="year">2026</span> Arman Dabiri · Los Angeles, California</div>
+    <div class="footer-links">
+      <a href="https://github.com/armandabiri99" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/arman-dabiri-266178189" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="Arman-Dabiri-Resume.pdf" download>Resume</a>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Arman Dabiri",
+  "jobTitle":"Lead IT & Infrastructure Engineer",
+  "url":"https://armandabiri99.github.io/",
+  "image":"https://armandabiri99.github.io/profile.jpg",
+  "email":"mailto:arman_dabiri@hotmail.com",
+  "address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},
+  "worksFor":{"@type":"Organization","name":"Network Experts, Inc"},
+  "alumniOf":[
+    {"@type":"CollegeOrUniversity","name":"Westcliff University"},
+    {"@type":"CollegeOrUniversity","name":"Shiraz University of Technology"}
+  ],
+  "knowsAbout":["Amazon Web Services","Terraform","Hybrid Cloud Infrastructure","Active Directory","Entra ID","Okta","VMware vSphere","Endpoint Security","Ubiquiti UniFi","Disaster Recovery"],
+  "sameAs":[
+    "https://www.linkedin.com/in/arman-dabiri-266178189",
+    "https://github.com/armandabiri99"
+  ]
+}
+</script>
+
+<script src="assets/main.js" defer></script>
 </body>
 </html>
