@@ -305,7 +305,9 @@ ul{margin:0;padding:0;list-style:none}
 }
 .proj h3{font-size:17.5px;font-weight:700;letter-spacing:-.025em;margin-top:2px}
 .proj h3 a:hover{color:var(--accent)}
-.proj p{color:var(--muted);font-size:14.5px;flex:1}
+.proj > p{color:var(--muted);font-size:14.5px;flex:1}
+.proj-body{flex:1;display:flex;flex-direction:column;gap:10px}
+.proj-body p{color:var(--muted);font-size:14.5px}
 .tags{display:flex;flex-wrap:wrap;gap:7px}
 .tag{
   font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:var(--r-pill);

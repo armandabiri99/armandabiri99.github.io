@@ -113,7 +113,7 @@ I enjoy helping organizations transition from traditional infrastructure to clou
 
 - **[Amazon WorkSpaces One-Shot Image Upgrade Automation](https://github.com/armandabiri99/aws-workspaces-image-upgrade)** — CloudFormation + Step Functions pipeline for snapshot-aware WorkSpaces image upgrades, SSM notifications, controlled rebuilds, and CSV reporting to S3
 - **[Secure 3-Tier VPC with ALB, ASG & RDS](https://github.com/armandabiri99/AWS_Multi_Tier_Webapp_Infra)** — Production-style Terraform baseline: multi-AZ VPC, ALB + Auto Scaling, RDS MySQL, SSM parameters, hardened security groups
-- **OpenDental Multi-Site Cloud Implementation** — Centralized cloud-hosted dental practice infrastructure with VPN connectivity, AD-unified access, and HIPAA-aligned controls; 99.9% uptime for 200+ staff
+- **OpenDental Multi-Site Hybrid Infrastructure Deployment** — Centralized OpenDental environment across five dental locations: Windows Server 2022, Hyper-V, Active Directory, IIS/HTTPS Middle Tier, MariaDB replication, SFTP image access, and RDS for remote call-center staff, over site-to-site VPN across SonicWall and UniFi
 - **M365 Tenant Audit & Automation Recovery** — Audited 16 Power Automate flows and 12 SharePoint sites, authored an operations runbook, and restored credential-rotation-broken automations with zero data loss
 - **[MSP Pricing Calculator](https://github.com/armandabiri99/MSP-Pricing-Calculator)** — Native Swift utility for modeling managed-service pricing, margins, and contract scenarios
 
