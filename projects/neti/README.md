@@ -1,16 +1,20 @@
 # Neti | Website AI assistant
 
-Neti is a website AI assistant designed to be adapted for customer organizations in any industry. It answers questions from each organization’s approved content and offers a reviewed contact handoff. I built and launched the first implementation for Network Experts on WordPress and AWS.
+Neti is a website AI assistant designed to be adapted for customer organizations in any industry. It answers questions from each organization’s approved content and offers a reviewed contact handoff. I built and launched the first implementation for Network Experts with an AWS backend.
 
 [Visit the website](https://networkexperts.la/) · [Read the launch announcement](https://www.linkedin.com/feed/update/urn:li:share:7524227618863439872/) · [Back to my portfolio](https://armandabiri99.github.io/#projects)
 
 ## Architecture
 
-![Neti architecture using AWS service icons. The WordPress widget connects to API Gateway and Lambda for chat, with DynamoDB and Bedrock on AWS. Consented inquiries follow a separate website path.](architecture-v2.svg)
+![Neti architecture using AWS service icons. The embedded website widget connects to API Gateway and Lambda for chat, with DynamoDB and Bedrock on AWS. Consented inquiries follow a separate website path.](architecture-web-integration.svg)
 
 *Conceptual view of the Network Experts deployment. Service artwork from the [official AWS Architecture Icons package](https://aws.amazon.com/architecture/icons/).*
 
 The chat API and inquiry submission are separate paths. The model helps answer questions. An inquiry reaches the website’s contact workflow only after the visitor reviews the fields, gives contact consent, and selects **Send inquiry**.
+
+## Integrating with different websites
+
+The chat backend is separate from the site that hosts the widget. A CMS can load the widget through a plugin or an embed. A custom-built site can integrate it directly into its frontend. Each site needs its own approved origin, brand settings and, if in-chat submissions are enabled, an adapter for its contact workflow. The Network Experts launch is the implementation shown in the diagram; each new integration needs its own validation.
 
 ## Adapting Neti for another industry
 
