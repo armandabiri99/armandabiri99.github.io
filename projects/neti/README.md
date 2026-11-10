@@ -6,7 +6,7 @@ Neti is a website AI assistant designed to be adapted for customer organizations
 
 ## Architecture
 
-![Neti architecture using AWS service icons. The WordPress widget connects to API Gateway and Lambda for chat, with DynamoDB and Bedrock on AWS. Consented inquiries follow a separate website path.](architecture.svg)
+![Neti architecture using AWS service icons. The WordPress widget connects to API Gateway and Lambda for chat, with DynamoDB and Bedrock on AWS. Consented inquiries follow a separate website path.](architecture-v2.svg)
 
 *Conceptual view of the Network Experts deployment. Service artwork from the [official AWS Architecture Icons package](https://aws.amazon.com/architecture/icons/).*
 
