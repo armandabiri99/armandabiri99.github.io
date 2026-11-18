@@ -10,7 +10,7 @@ A visitor may know the problem they need to solve before they know the name of t
 
 ## Architecture
 
-![Neti architecture using AWS service icons. The embedded website widget connects to API Gateway and Lambda for chat, with DynamoDB and Bedrock on AWS. Consented inquiries follow a separate website path.](architecture-web-integration.svg)
+![Neti AWS architecture. The client browser calls Amazon API Gateway, which invokes AWS Lambda. Lambda uses Amazon Bedrock for answers, Amazon DynamoDB for session state, and Amazon Bedrock Knowledge Bases to retrieve passages from reviewed content in Amazon S3, indexed with Amazon S3 Vectors.](neti-aws-architecture.png)
 
 *Conceptual view of the Network Experts deployment. Service artwork from the [official AWS Architecture Icons package](https://aws.amazon.com/architecture/icons/).*
 
